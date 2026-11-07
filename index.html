@@ -1,0 +1,403 @@
+<title>MAGIC COMB LTD</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single column, full-bleed bands, each with a centered 1120px inner wrapper. */
+:root{
+  --ink:#13161f;          /* night navy - text + dark bands */
+  --paper:#f6f3ed;        /* warm sand page ground */
+  --surface:#ffffff;      /* cards */
+  --line:#e0dacf;         /* hairline on paper */
+  --muted:#5f6472;        /* cool slate secondary text */
+  --ember:#e4572e;        /* ember orange - primary accent */
+  --signal:#2e6fd8;       /* signal blue - secondary accent */
+  --tint:#fbe9e2;         /* ember tint fill */
+  --shadow:0 1px 2px rgba(19,22,31,.05), 0 14px 36px -20px rgba(19,22,31,.3);
+  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f7; --paper:#0f1219; --surface:#191d27; --line:#2b3140;
+    --muted:#99a1b3; --ember:#ff7a52; --signal:#6ea2f5; --tint:#2a1e1a;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 16px 40px -22px rgba(0,0,0,.85);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f7; --paper:#0f1219; --surface:#191d27; --line:#2b3140;
+  --muted:#99a1b3; --ember:#ff7a52; --signal:#6ea2f5; --tint:#2a1e1a;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 16px 40px -22px rgba(0,0,0,.85);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--paper)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0;font-weight:700;letter-spacing:-.015em}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+.wrap{
+  max-width:1120px;margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.band{padding-block:88px}
+.eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ember);margin:0 0 14px;font-family:var(--body)
+}
+.lead{font-size:19px;color:var(--muted);max-width:62ch}
+
+/* ---------- header ---------- */
+header.nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:30;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:22px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto}
+.brand-mark{width:34px;height:34px;flex:none}
+.brand-name{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.02em}
+.brand-name small{display:block;font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.24em;color:var(--muted)}
+.nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:600}
+.nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);border-bottom-color:var(--ember)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font:inherit;font-weight:600;border-radius:8px;padding:12px 22px;
+  border:1px solid var(--ember);background:var(--ember);color:#fff;
+  text-decoration:none;cursor:pointer;transition:transform .15s ease,opacity .15s ease;
+}
+.btn:hover{transform:translateY(-1px);opacity:.93}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ember);color:var(--ember)}
+.btn.sm{padding:9px 16px;font-size:15px}
+@media (max-width:880px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding-block:78px 72px;border-bottom:1px solid var(--line)}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,6.6vw,70px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--ember)}
+.hero .lead{margin-top:20px;font-size:20px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:34px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+.fact strong{display:block;font-family:var(--display);font-size:30px;font-weight:800;color:var(--signal);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:20px;background:
+  radial-gradient(120% 90% at 30% 12%,var(--tint),transparent 60%),var(--surface);
+  border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;overflow:hidden}
+.hero-art svg{width:82%;height:auto}
+@media (max-width:880px){
+  .hero-in{grid-template-columns:1fr;gap:38px}
+  .hero-art{order:-1;aspect-ratio:5/4}
+}
+
+/* ---------- section head ---------- */
+.head{max-width:62ch;margin-bottom:44px}
+.head h2{font-size:clamp(29px,4vw,42px)}
+.head p{margin-top:14px;color:var(--muted);font-size:18px}
+
+/* ---------- grids & cards ---------- */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:980px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.g2,.g3{grid-template-columns:1fr}}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;
+}
+.card h3{font-size:21px}
+.card p{color:var(--muted);font-size:16px}
+.icon{width:36px;height:36px;color:var(--ember)}
+
+/* ---------- game cards ---------- */
+.game{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:var(--shadow)
+}
+.game .keyart{aspect-ratio:16/10;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.game .keyart svg{width:100%;height:100%}
+.game .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.game h3{font-size:22px}
+.game p{color:var(--muted);font-size:16px}
+.status{
+  align-self:flex-start;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 10px;border-radius:5px;border:1px solid currentColor;color:var(--muted)
+}
+.game.slot{border-style:dashed;box-shadow:none}
+.slot .keyart{background:var(--tint);color:var(--muted);font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;border-bottom-style:dashed}
+.slot h3,.slot p,.slot .meta{color:var(--muted)}
+.slot .status{border-style:dashed}
+.status.live{color:#2f8f5b}
+.status.beta{color:var(--signal)}
+.status.dev{color:var(--ember)}
+.meta{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--muted)}
+.meta b{font-weight:600;color:var(--ink)}
+
+/* ---------- dark band: pipeline ---------- */
+.dark{background:var(--ink);color:var(--paper)}
+.dark .head p,.dark .step p{color:color-mix(in srgb,var(--paper) 70%,transparent)}
+.steps{counter-reset:s;display:grid;gap:2px;border-radius:14px;overflow:hidden}
+.step{
+  display:grid;grid-template-columns:74px 1fr;gap:20px;align-items:start;
+  padding:26px 28px;background:color-mix(in srgb,var(--paper) 7%,transparent)
+}
+.step::before{
+  counter-increment:s;content:"0" counter(s);
+  font-family:var(--display);font-size:30px;font-weight:800;color:var(--ember);
+  font-variant-numeric:tabular-nums;line-height:1
+}
+.step h3{font-size:20px;margin-bottom:6px}
+@media (max-width:640px){.step{grid-template-columns:1fr;gap:8px;padding:22px}}
+
+/* ---------- table ---------- */
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:16px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+thead th{font-family:var(--display);font-size:15px;background:var(--tint);color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+td:not(:first-child){font-variant-numeric:tabular-nums;color:var(--muted)}
+
+/* ---------- faq ---------- */
+details{border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+details+details{margin-top:12px}
+summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:600;font-size:17px;display:flex;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-inline-start:auto;color:var(--ember);font-size:22px;font-weight:400;line-height:1}
+details[open] summary::after{content:"\2013"}
+details .body{padding:0 22px 20px;color:var(--muted)}
+
+summary:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Magic Comb logo">
+        <rect x="1" y="1" width="38" height="38" rx="9" fill="var(--ember)"></rect>
+        <rect x="9" y="9" width="22" height="6" rx="3" fill="#fff"></rect>
+        <g fill="#fff">
+          <rect x="9" y="18" width="3" height="13" rx="1.5"></rect>
+          <rect x="15" y="18" width="3" height="13" rx="1.5"></rect>
+          <rect x="21" y="18" width="3" height="13" rx="1.5"></rect>
+          <rect x="27" y="18" width="3" height="13" rx="1.5"></rect>
+        </g>
+      </svg>
+      <span class="brand-name">MAGIC COMB<small>LTD</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#games">Games</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#pipeline">How we build</a></li>
+      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn sm" href="#games">Our games</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div>
+      <p class="eyebrow">Magic Comb Ltd · Independent game studio</p>
+      <h1>We build games that are <em>easy to start</em> and hard to put down.</h1>
+      <p class="lead">Magic Comb is a game studio working on original titles and co-developing with publishers. Design, art, engineering and live ops under one roof.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#games">Play our games</a>
+        <a class="btn ghost" href="#pipeline">How we build</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 320 320" role="img" aria-label="Arcade controller illustration">
+        <rect x="34" y="92" width="252" height="146" rx="34" fill="var(--ink)"></rect>
+        <rect x="34" y="92" width="252" height="146" rx="34" fill="none" stroke="var(--ember)" stroke-width="3"></rect>
+        <!-- d-pad -->
+        <g fill="var(--paper)">
+          <rect x="82" y="148" width="22" height="58" rx="7"></rect>
+          <rect x="64" y="166" width="58" height="22" rx="7"></rect>
+        </g>
+        <!-- buttons -->
+        <circle cx="222" cy="152" r="13" fill="var(--ember)"></circle>
+        <circle cx="250" cy="180" r="13" fill="var(--signal)"></circle>
+        <circle cx="222" cy="208" r="13" fill="var(--paper)"></circle>
+        <circle cx="194" cy="180" r="13" fill="var(--paper)"></circle>
+        <!-- screen strip -->
+        <rect x="134" y="156" width="48" height="34" rx="6" fill="var(--signal)" opacity=".2"></rect>
+        <g fill="var(--signal)">
+          <rect x="140" y="178" width="7" height="8"></rect>
+          <rect x="150" y="172" width="7" height="14"></rect>
+          <rect x="160" y="164" width="7" height="22"></rect>
+          <rect x="170" y="168" width="7" height="18"></rect>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="band wrap" id="games">
+  <div class="head">
+    <p class="eyebrow">Our games</p>
+    <h2>Games</h2>
+    <p>Empty slots, ready for the studio's real titles. Each card takes key art, a name, a status, a one-line description and the platforms.</p>
+  </div>
+  <div class="grid g3">
+    <article class="game slot">
+      <div class="keyart"><span>Key art</span></div>
+      <div class="body">
+        <span class="status">Status</span>
+        <h3>Game title</h3>
+        <p>One or two sentences on what the player does and why it is worth their time.</p>
+        <div class="meta"><span>Platforms</span><span>Release</span></div>
+      </div>
+    </article>
+    <article class="game slot">
+      <div class="keyart"><span>Key art</span></div>
+      <div class="body">
+        <span class="status">Status</span>
+        <h3>Game title</h3>
+        <p>One or two sentences on what the player does and why it is worth their time.</p>
+        <div class="meta"><span>Platforms</span><span>Release</span></div>
+      </div>
+    </article>
+    <article class="game slot">
+      <div class="keyart"><span>Key art</span></div>
+      <div class="body">
+        <span class="status">Status</span>
+        <h3>Game title</h3>
+        <p>One or two sentences on what the player does and why it is worth their time.</p>
+        <div class="meta"><span>Platforms</span><span>Release</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="studio" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">The studio</p>
+      <h2>Small team, full stack, no handoffs between companies</h2>
+      <p>Design, art, engineering, audio and live ops sit in the same studio, so an idea reaches a playable build without passing between vendors.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M21 7h-5v5"></path></svg>
+        <h3>Original titles</h3>
+        <p>We develop and operate our own games, so the systems we build are tested against real players rather than only against a spec.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="3"></rect><path d="M8 21h8"></path><path d="M12 18v3"></path></svg>
+        <h3>Co-development</h3>
+        <p>We take a feature, a platform port or a whole production slice off a publisher's plate, working inside their engine and their pipeline.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path></svg>
+        <h3>Engine work</h3>
+        <p>Unity and Unreal, plus our own tooling for level authoring and content pipelines. We hand over source, tools and documentation.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V5"></path><path d="M8 19v-7M12 19V8M16 19v-4M20 19v-9"></path></svg>
+        <h3>Live operations</h3>
+        <p>Events, seasons, A/B tests and balance patches after launch. A shipped game is the start of the work, not the end of it.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17M3.5 15h17"></path><path d="M12 3a16 16 0 000 18a16 16 0 000-18z"></path></svg>
+        <h3>Localisation &amp; release</h3>
+        <p>Store pages, age ratings, platform certification and localisation handled in-house before submission.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v16"></path><path d="M6 8c0 4 3 6 6 6s6-2 6-6"></path><path d="M5 20h14"></path></svg>
+        <h3>Playtesting</h3>
+        <p>Builds go in front of real players on a fixed cadence. Decisions come from recorded sessions, not from opinions in a meeting.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="pipeline">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">How we build</p>
+      <h2>Five stages from pitch to patch</h2>
+      <p>Every project runs through the same stages, each ending in something playable. Partners get a build and a written review at each gate.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div><h3>Concept</h3><p>One page, one core verb, one reference reel. We agree on the fantasy and the target player before anyone opens the engine.</p></div></div>
+      <div class="step"><div><h3>Prototype</h3><p>A grey-box build that answers one question: is the core loop fun with nothing else attached?</p></div></div>
+      <div class="step"><div><h3>Vertical slice</h3><p>One level at shipping quality — final art, audio, UI and feel — used for greenlighting, pitching and the first external playtests.</p></div></div>
+      <div class="step"><div><h3>Production</h3><p>Content at scale on two-week sprints, with a playable build every Friday and performance budgets enforced per platform.</p></div></div>
+      <div class="step"><div><h3>Launch &amp; live ops</h3><p>Certification, store pages and release, then a patch cadence driven by funnel data, crash reports and player feedback.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band wrap" id="platforms">
+  <div class="head">
+    <p class="eyebrow">Platforms &amp; engines</p>
+    <h2>What we support, and what it takes</h2>
+    <p>Platforms and engines the studio works with. Fill in the frame-rate targets and lead times once they are set.</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th scope="col">Platform</th><th scope="col">Engine</th><th scope="col">Target frame rate</th><th scope="col">Port lead time</th><th scope="col">Certification</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>iOS / Android</td><td>Unity</td><td>—</td><td>—</td><td>Store review</td></tr>
+        <tr><td>PC (Steam)</td><td>Unity / Unreal</td><td>—</td><td>—</td><td>None</td></tr>
+        <tr><td>Nintendo Switch</td><td>Unity</td><td>—</td><td>—</td><td>Lotcheck</td></tr>
+        <tr><td>PlayStation 5 / Xbox Series</td><td>Unreal</td><td>—</td><td>—</td><td>Platform certification</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="band" id="faq" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">FAQ</p>
+      <h2>What publishers and press usually ask</h2>
+    </div>
+    <details open>
+      <summary>Do you take work-for-hire projects?</summary>
+      <div class="body">Yes, for co-development and ports. An external project gets a dedicated team rather than spare capacity between our own titles.</div>
+    </details>
+    <details>
+      <summary>Who owns the IP on a co-development project?</summary>
+      <div class="body">The publisher does. We keep the right to show the work in our portfolio once the title is public, and we hand over source, tools and build scripts at the end of the contract.</div>
+    </details>
+    <details>
+      <summary>What is the smallest project you take?</summary>
+      <div class="body">A prototype sprint: one designer, one engineer and one artist, ending in a playable build and a written assessment of whether the idea holds up.</div>
+    </details>
+    <details>
+      <summary>Are you hiring?</summary>
+      <div class="body">We open roles a few times a year, usually gameplay engineering and technical art. Send a portfolio and a short note to the studio and we will keep it on file.</div>
+    </details>
+    <details>
+      <summary>Where do I get press assets?</summary>
+      <div class="body">Email the studio and we will send a press kit with key art, screenshots, logos, trailers and fact sheets for the title you are covering.</div>
+    </details>
+  </div>
+</section>
+
+<script>
+
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var el = document.querySelector(a.getAttribute('href'));
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  });
+});
+</script>
